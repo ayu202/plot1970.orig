@@ -1,0 +1,280 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+//樹高の指定
+H 18;
+
+actions
+(
+    {
+        name    noCells;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    noCells;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    noCells;
+        type    cellZoneSet;
+        action  subtract;
+        source  boxToCell;
+        box     (0 0 0) (2100 2200 20);
+    }
+
+
+//kansen-windbreaks
+    {
+        name    line0;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line0;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line0;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (0 0 0) (50 2200 20);
+    }
+
+    {
+        name    line01;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line01;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line01;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (2150 0 0) (2200 2200 20);
+    }
+
+    {
+        name    line02;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line02;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line02;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (0 0 0) (2200 50 20);
+    }
+
+    {
+        name    line03;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line03;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line03;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (0 2150 0) (2200 2200 20);
+    }
+
+    
+//kouchi-windbreaks    
+    {
+        name    line1;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line1;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line1;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (330 1290 0) (340 1670 $H);
+    }
+    
+    {
+        name    line2;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line2;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line2;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (440 1670 0) (450 2175 $H);
+    }
+    
+    {
+        name    line3;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line3;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line3;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (1163 1680 0) (1173 1860 $H);
+    }
+    
+    {
+        name    line4;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line4;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line4;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (600 960 0) (610 1680 $H);
+    }
+    
+    {
+        name    line5;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line5;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line5;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (440 1290 0) (450 1490 $H);
+    }
+    
+    {
+        name    line6;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line6;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line6;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (1163 960 0) (1173 1290 $H);
+    }
+    
+    {
+        name    line7;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line7;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line7;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (1700 960 0) (1710 1710 $H);
+    }
+    
+    {
+        name    line8;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line8;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line8;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (440 620 0) (450 786 $H);
+    }
+    
+    {
+        name    line9;
+        type    cellZoneSet;
+        action  clear;
+    }
+    {
+        name    line9;
+        type    cellZoneSet;
+        action  invert;
+    }
+    {
+        name    line9;
+        type    cellZoneSet;
+        action  new;
+        source  boxToCell;
+        box     (600 420 0) (610 610 $H);
+    }
+);
+
+// ************************************************************************* //
